@@ -77,9 +77,10 @@ bounds.phase(i).path.upper =[inf inf inf inf inf inf 0 0]; % row vector, length 
 % ----- PHASE 1 ----- %
 i = 1;
 guess.phase(i).time    = [0;T];                % column vector, min length = 2
-guess.phase(i).state   = rand(2,14);                % array, min numrows = 2, numcols = numstates
-guess.phase(i).control = rand(2,6);               % array, min numrows = 2, numcols = numcontrols
-guess.phase(i).integral = rand;               % scalar
+guess.phase(i).state   = [0,lmax+r,D/T,0,pi/2,0,Fmax*[1 1 1],[0 0 0],0,0;...
+                          D,lmax+r,D/T,0,pi/2,0,Fmax*[1 1 1],[0 0 0],Fmax*T,0];% array, min numrows = 2, numcols = numstates
+guess.phase(i).control = zeros(2,6);               % array, min numrows = 2, numcols = numcontrols
+guess.phase(i).integral = 1;               % scalar
 
 %guess.parameter = [];                    % row vector, numrows = numparams
 
