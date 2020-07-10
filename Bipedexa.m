@@ -37,12 +37,12 @@ bounds.phase(i).finaltime.upper = T ;                % scalar
  Fupp= [1 1 1]*Fmax;
  Taulow= [1 1 1]*(-Taumax);
  Tauupp= [1 1 1]*Taumax;
-bounds.phase(i).initialstate.lower = [xlow,ylow,0,0,0,0,Flow,Taulow,0,0];           % row vector, length = numstates
-bounds.phase(i).initialstate.upper = [xlow,yupp,Inf,Inf,Inf,Inf,Fupp,Tauupp,0,Inf];           % row vector, length = numstates
-bounds.phase(i).state.lower = [xlow,ylow,0,0,0,0,Flow,Taulow,0,0];             % row vector, length = numstates
-bounds.phase(i).state.upper = [xupp,yupp,Inf,Inf,Inf,Inf,Fupp,Tauupp,Inf,Inf];                 % row vector, length = numstates
-bounds.phase(i).finalstate.lower = [xupp,ylow,0,0,0,0,Flow,Taulow,0,0];             % row vector, length = numstates
-bounds.phase(i).finalstate.upper = [xupp,yupp,Inf,Inf,Inf,Inf,Fupp,Tauupp,Fmax*T,Inf];             % row vector, length = numstates
+bounds.phase(i).initialstate.lower = [xlow,ylow,-Inf,-Inf,-pi,-Inf,Flow,Taulow,0,0];           % row vector, length = numstates
+bounds.phase(i).initialstate.upper = [xlow,yupp,Inf,Inf,Inf,pi,Fupp,Tauupp,0,Inf];           % row vector, length = numstates
+bounds.phase(i).state.lower = [xlow,ylow,-Inf,-Inf,-pi,-Inf,Flow,Taulow,0,0];             % row vector, length = numstates
+bounds.phase(i).state.upper = [xupp,yupp,Inf,Inf,pi,Inf,Fupp,Tauupp,Inf,Inf];                 % row vector, length = numstates
+bounds.phase(i).finalstate.lower = [xupp,ylow,-Inf,-Inf,-pi,-Inf,Flow,Taulow,0,0];             % row vector, length = numstates
+bounds.phase(i).finalstate.upper = [xupp,yupp,Inf,Inf,pi,Inf,Fupp,Tauupp,Fmax*T,Inf];             % row vector, length = numstates
 % 3 Time derivative of force controls
 % 3 time derivative of torque controls
 neg=[1 1 1]*(-Inf);
