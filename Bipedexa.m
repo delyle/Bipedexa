@@ -197,7 +197,7 @@ crossFrefz=crossFref(:,3); %Extracting z column
 
 xddot= Ftr.*(x./magnitudeltr)+Fref.*((x-dveccol)./magnitudelref)+Flead.*((x-Dveccol)./magnitudellead);
 yddot= Ftr.*(y./magnitudeltr)+Fref.*(y./magnitudelref)+Flead.*(y./magnitudellead)-g;
-thetaddot=Tautr+Taulead+Tauref+crossFtrz+crossFleadz+crossFrefz;
+thetaddot=(Tautr+Taulead+Tauref+crossFtrz+crossFleadz+crossFrefz)./I;
 
 phaseout.dynamics = [xdot,ydot,xddot,yddot,thetadot,thetaddot,Fdot,Taudot,Pdot,Qdot];
 
